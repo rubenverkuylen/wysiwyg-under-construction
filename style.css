@@ -5,6 +5,17 @@
   --color-grey-heavy: #afafaf;
   --color-grey-dark: #464646;
   --padding: 2em;
+  --color-text-1: #008f00;
+  --color-text-2: #ffff0a;
+  --color-text-3: #797979;
+  --color-text-4: #ffffff;
+  --color-text-5: #0a60fe;
+  --color-text-6: #ff41ff;
+  --color-text-7: #9437ff;
+  --color-text-8: #ff0000;
+  --color-text-9: #00fdff;
+  --color-text-10: #fd8208;
+  --color-text-10: #7a81ff;
 }
 
 @font-face {
@@ -71,6 +82,7 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-family: SFProRounded;
+  background: var(--color-grey-dark);
 }
 
 /* A elements that don't have a class get default styles */
@@ -124,10 +136,24 @@ header {
   margin: auto;
 }
 
+.logo * {
+  display: flex;
+  pointer-events: none;
+}
+
+.logo p {
+  font-weight: 700;
+  text-align: center;
+  justify-content: space-around;
+}
+
+/* .logo > span {
+  margin-left: 10px;
+} */
+
 #grid-container {
-  background: var(--color-grey-dark);
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   display: grid;
 }
 
@@ -181,23 +207,21 @@ a:hover {
 }
 
 /* COLORTEXT */
-.ct1 {
-  color: blue;
-}
-.ct2 {
-  color: greenyellow;
-}
-.ct3 {
-  color: brown;
+.color-text {
+  font-weight: 700;
 }
 
 /* MEDIA */
 @media (min-width: 1000px) {
   #grid-container {
     grid-template-columns: 1fr 1fr 1fr;
+    height: 100vh;
   }
   .logo {
     width: 70%;
+  }
+  .logo p {
+    font-size: 5.5em;
   }
 }
 
@@ -208,6 +232,12 @@ a:hover {
   .logo {
     width: calc(100% - 2 * var(--padding));
   }
+  .logo p {
+    font-size: 2em;
+  }
+  #grid-container {
+    margin-bottom: 5em;
+  }
   .grid-item:nth-child(1) {
     order: 2;
   }
@@ -216,7 +246,6 @@ a:hover {
   }
   .grid-item:nth-child(3) {
     order: 3;
-    padding-bottom: 4em;
   }
   .social ul {
     text-align: center;

@@ -10,27 +10,27 @@
 @font-face {
   font-family: SFProRounded;
   font-weight: 300;
-  src: url("/assets/fonts/SF-Pro-Rounded-Regular.otf") format("opentype");
+  src: url("assets/fonts/SF-Pro-Rounded-Regular.otf") format("opentype");
 }
 @font-face {
   font-family: SFProRounded;
   font-weight: 400;
-  src: url("/assets/fonts/SF-Pro-Rounded-Medium.otf") format("opentype");
+  src: url("assets/fonts/SF-Pro-Rounded-Medium.otf") format("opentype");
 }
 @font-face {
   font-family: SFProRounded;
   font-weight: 500;
-  src: url("/assets/fonts/SF-Pro-Rounded-Bold.otf") format("opentype");
+  src: url("assets/fonts/SF-Pro-Rounded-Bold.otf") format("opentype");
 }
 @font-face {
   font-family: SFProRounded;
   font-weight: 600;
-  src: url("/assets/fonts/SF-Pro-Rounded-Semibold.otf") format("opentype");
+  src: url("assets/fonts/SF-Pro-Rounded-Semibold.otf") format("opentype");
 }
 @font-face {
   font-family: SFProRounded;
   font-weight: 700;
-  src: url("/assets/fonts/SF-Pro-Rounded-Heavy.otf") format("opentype");
+  src: url("assets/fonts/SF-Pro-Rounded-Heavy.otf") format("opentype");
 }
 
 /* Box sizing rules */

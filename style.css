@@ -78,7 +78,7 @@ html:focus-within {
 
 /* Set core body defaults */
 body {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-family: SFProRounded;
@@ -181,13 +181,17 @@ h1,
   background-color: var(--color-grey-light);
 }
 
-.introduction p {
+p {
   font-size: 1.25em;
 }
 
-.construction > h1 {
+.construction h1 {
   text-align: center;
   margin-bottom: calc(var(--padding) / 2);
+}
+
+.construction p {
+  opacity: 0.5;
 }
 
 .social ul {
@@ -237,6 +241,9 @@ a:hover {
   }
   #grid-container {
     margin-bottom: 5em;
+    min-height: 90vh;
+    z-index: 99;
+    position: relative;
   }
   .grid-item:nth-child(1) {
     order: 2;

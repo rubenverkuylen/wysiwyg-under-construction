@@ -1,0 +1,224 @@
+/* reset/normalizer by https://piccalil.li/blog/a-modern-css-reset/ */
+:root {
+  --color-grey-light: #eaeaea;
+  --color-grey-medium: #c7c7c7;
+  --color-grey-heavy: #afafaf;
+  --color-grey-dark: #464646;
+  --padding: 2em;
+}
+
+@font-face {
+  font-family: SFProRounded;
+  font-weight: 300;
+  src: url("/assets/fonts/SF-Pro-Rounded-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: SFProRounded;
+  font-weight: 400;
+  src: url("/assets/fonts/SF-Pro-Rounded-Medium.otf") format("opentype");
+}
+@font-face {
+  font-family: SFProRounded;
+  font-weight: 500;
+  src: url("/assets/fonts/SF-Pro-Rounded-Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: SFProRounded;
+  font-weight: 600;
+  src: url("/assets/fonts/SF-Pro-Rounded-Semibold.otf") format("opentype");
+}
+@font-face {
+  font-family: SFProRounded;
+  font-weight: 700;
+  src: url("/assets/fonts/SF-Pro-Rounded-Heavy.otf") format("opentype");
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: SFProRounded;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+strong {
+  font-weight: 700;
+}
+
+/* GENERAL */
+header {
+  width: 100vw;
+  position: fixed;
+  bottom: var(--padding);
+}
+
+.logo {
+  margin: auto;
+}
+
+#grid-container {
+  background: var(--color-grey-dark);
+  width: 100%;
+  height: 100vh;
+  display: grid;
+}
+
+.grid-item {
+  border-radius: 1em;
+  padding: var(--padding);
+}
+
+h1,
+.social li {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+/* SECTION */
+#item-left {
+  background-color: Var(--color-grey-heavy);
+}
+
+#item-middle {
+  background-color: var(--color-grey-medium);
+}
+
+#item-right {
+  background-color: var(--color-grey-light);
+}
+
+.introduction p {
+  font-size: 1.25em;
+}
+
+.construction > h1 {
+  text-align: center;
+  margin-bottom: calc(var(--padding) / 2);
+}
+
+.social ul {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+  text-align: end;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* COLORTEXT */
+.ct1 {
+  color: blue;
+}
+.ct2 {
+  color: greenyellow;
+}
+.ct3 {
+  color: brown;
+}
+
+/* MEDIA */
+@media (min-width: 1000px) {
+  #grid-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .logo {
+    width: 70%;
+  }
+}
+
+@media (max-width: 999px) {
+  :root {
+    --padding: 1em;
+  }
+  .logo {
+    width: calc(100% - 2 * var(--padding));
+  }
+  .grid-item:nth-child(1) {
+    order: 2;
+  }
+  .grid-item:nth-child(2) {
+    order: 1;
+  }
+  .grid-item:nth-child(3) {
+    order: 3;
+    padding-bottom: 4em;
+  }
+  .social ul {
+    text-align: center;
+  }
+}

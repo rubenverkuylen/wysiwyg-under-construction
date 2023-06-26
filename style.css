@@ -139,8 +139,7 @@ header {
 
 .logo p {
   font-weight: 700;
-  /* text-align: center;
-  justify-content: space-around; */
+  justify-content: space-around;
 }
 
 /* .logo > span {

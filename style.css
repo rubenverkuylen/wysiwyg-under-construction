@@ -208,6 +208,8 @@ a {
 
 a:hover {
   text-decoration: underline;
+  text-decoration-thickness: 4px;
+  text-underline-offset: 4px;
 }
 
 /* COLORTEXT */
@@ -233,6 +235,9 @@ a:hover {
   :root {
     --padding: 1em;
   }
+  header {
+    top: var(--padding);
+  }
   .logo {
     width: calc(100% - 2 * var(--padding));
   }
@@ -240,7 +245,7 @@ a:hover {
     font-size: 2em;
   }
   #grid-container {
-    margin-bottom: 5em;
+    margin-top: 5em;
     min-height: 90vh;
     z-index: 99;
     position: relative;

@@ -132,10 +132,6 @@ header {
   bottom: var(--padding);
 }
 
-.logo {
-  margin: auto;
-}
-
 .logo * {
   display: flex;
   pointer-events: none;
@@ -143,8 +139,8 @@ header {
 
 .logo p {
   font-weight: 700;
-  text-align: center;
-  justify-content: space-around;
+  /* text-align: center;
+  justify-content: space-around; */
 }
 
 /* .logo > span {
@@ -153,7 +149,6 @@ header {
 
 #grid-container {
   width: 100%;
-  /* height: 100vh; */
   display: grid;
 }
 
@@ -225,6 +220,7 @@ a:hover {
   }
   .logo {
     width: 70%;
+    margin: auto;
   }
   .logo p {
     font-size: 5.5em;
@@ -239,7 +235,9 @@ a:hover {
     top: var(--padding);
   }
   .logo {
-    width: calc(100% - 2 * var(--padding));
+    width: calc(100% - 1em);
+    justify-content: space-around;
+    display: flex;
   }
   .logo p {
     font-size: 2em;

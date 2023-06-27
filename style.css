@@ -1,10 +1,10 @@
 /* reset/normalizer by https://piccalil.li/blog/a-modern-css-reset/ */
 :root {
-  --color-grey-light: #eaeaea;
-  --color-grey-medium: #c7c7c7;
-  --color-grey-heavy: #afafaf;
-  --color-grey-dark: #464646;
   --padding: 2em;
+  --color-grey-1: #eaeaea;
+  --color-grey-2: #c7c7c7;
+  --color-grey-3: #afafaf;
+  --color-grey-4: #5c5c5c;
   --color-text-1: #008f00;
   --color-text-2: #ffff0a;
   --color-text-3: #797979;
@@ -82,7 +82,7 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-family: SFProRounded;
-  background: var(--color-grey-dark);
+  background: var(--color-grey-4);
 }
 
 /* A elements that don't have a class get default styles */
@@ -164,15 +164,15 @@ h1,
 
 /* SECTION */
 #item-left {
-  background-color: Var(--color-grey-heavy);
+  background-color: Var(--color-grey-3);
 }
 
 #item-middle {
-  background-color: var(--color-grey-medium);
+  background-color: var(--color-grey-2);
 }
 
 #item-right {
-  background-color: var(--color-grey-light);
+  background-color: var(--color-grey-1);
 }
 
 p {
@@ -231,10 +231,10 @@ a:hover {
     --padding: 1em;
   }
   header {
-    top: var(--padding);
+    top: 0;
   }
   .logo {
-    width: calc(100% - 1em);
+    width: 100%;
     justify-content: space-around;
     display: flex;
   }
@@ -242,10 +242,11 @@ a:hover {
     font-size: 2em;
   }
   #grid-container {
-    margin-top: 5em;
-    min-height: 90vh;
+    margin-top: 54px;
+    min-height: calc(100vh - 54px);
     z-index: 99;
     position: relative;
+    grid-template-rows: min-content min-content 1fr;
   }
   .grid-item:nth-child(1) {
     order: 2;
@@ -255,6 +256,11 @@ a:hover {
   }
   .grid-item:nth-child(3) {
     order: 3;
+  }
+  .social {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
   }
   .social ul {
     text-align: center;

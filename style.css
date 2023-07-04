@@ -179,13 +179,18 @@ p {
   font-size: 1.25em;
 }
 
-.construction h1 {
+.construction h1,
+.opencall h1 {
   text-align: center;
   margin-bottom: calc(var(--padding) / 2);
 }
 
 .construction p {
   opacity: 0.5;
+}
+
+.opencall {
+  background-color: var(--color-grey-4);
 }
 
 .social ul {
@@ -204,6 +209,17 @@ a:hover {
   text-decoration: underline;
   text-decoration-thickness: 4px;
   text-underline-offset: 4px;
+}
+
+/* .social li:first-child::after {
+  content: "";
+  display: block;
+  height: 4px;
+  background: black;
+} */
+
+.social li:first-child {
+  margin-bottom: 1em;
 }
 
 /* COLORTEXT */

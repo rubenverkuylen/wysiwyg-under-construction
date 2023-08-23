@@ -1,9 +1,12 @@
 "use strict";
 
 // EMAIL ENCODER
-var encEmail = "aW5mb0B3eXNpd3lnY2luZW1hLm5ldA==";
-const form = document.getElementById("contact");
-form.setAttribute("href", "mailto:".concat(atob(encEmail)));
+var encEmail = "c29zQHRoZXNhZ2FvZnNhZ2UuY29tIA==";
+const form = document.getElementsByClassName(".contact");
+form.array.forEach((element) => {
+  element.setAttribute("href", "mailto:".concat(atob(encEmail)));
+});
+// form.setAttribute("href", "mailto:".concat(atob(encEmail)));
 
 function randomColor() {
   [].forEach.call(document.querySelectorAll(".color-text"), function (el) {

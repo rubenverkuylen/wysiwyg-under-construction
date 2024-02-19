@@ -1,17 +1,79 @@
 "use strict";
+const events = document.querySelector(".events");
+const warning = document.getElementById("warning");
+const gridItem = document.querySelectorAll(".grid-item");
 
-// EMAIL ENCODER
-var encEmail = "c29zQHRoZXNhZ2FvZnNhZ2UuY29tIA==";
-const form = document.getElementsByClassName(".contact");
-form.array.forEach((element) => {
-  element.setAttribute("href", "mailto:".concat(atob(encEmail)));
+// Round border
+gridItem.forEach((el) => {
+  el.classList.add("radius");
 });
-// form.setAttribute("href", "mailto:".concat(atob(encEmail)));
 
+// email encoder
+var encEmail = "aW5mb0B3eXNpd3lnY2luZW1hLm5ldA==";
+const form = document.getElementById("contact");
+form.setAttribute("href", "mailto:".concat(atob(encEmail)));
+
+// random color
 function randomColor() {
   [].forEach.call(document.querySelectorAll(".color-text"), function (el) {
     el.style.color = `var(--color-text-${Math.floor(Math.random() * 10) + 1})`;
+    setTimeout(() => {
+      el.style.transition = "0s";
+    }, 100);
   });
 }
 
 randomColor();
+
+// programme generator from json
+
+const getDataProgramme = function () {
+  fetch("./programme.json")
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      for (const event of data) {
+        renderProgramme(event);
+      }
+    });
+};
+getDataProgramme();
+
+const renderProgramme = function (event) {
+  let newDate = new Date(event.datestart).getTime();
+  let urlCheck = event.url
+    ? `<strong><a href="${event.url}">${event.urltext}</a></strong>`
+    : "";
+
+  if (newDate < getCurrentDate()) {
+    return;
+  } else {
+    warning.remove();
+
+    const html = `
+    <li class="event">
+    <h3>${event.title}</h3>
+    <time>${event.datestart}${event.dateend ? " — " + event.dateend : ""}</time>
+    <div>${event.location}</div>
+    ${urlCheck}
+    </li>
+    `;
+    events.insertAdjacentHTML("beforeend", html);
+  }
+};
+
+const getCurrentDate = function () {
+  const date = new Date();
+
+  let day = date.getDate();
+  let month = date.getMonth() + 1;
+  let year = date.getFullYear();
+
+  // This arrangement can be altered based on how we want the date's format to appear.
+  let currentDate = `${year}-${month}-${day}`;
+  return date;
+};
+getCurrentDate();
+
+// change transition

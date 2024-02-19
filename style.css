@@ -15,7 +15,7 @@
   --color-text-8: #ff0000;
   --color-text-9: #00fdff;
   --color-text-10: #fd8208;
-  --color-text-10: #7a81ff;
+  --transition: 0.2s cubic-bezier(0, 0.15, 1, 0.37);
 }
 
 @font-face {
@@ -152,8 +152,13 @@ header {
 }
 
 .grid-item {
-  border-radius: 1em;
+  border-radius: 0em;
   padding: var(--padding);
+}
+
+.radius {
+  border-radius: 1em;
+  transition: var(--transition);
 }
 
 h1,
@@ -179,13 +184,13 @@ p {
   font-size: 1.25em;
 }
 
-.construction h1,
+.upcoming h1,
 .opencall h1 {
   text-align: center;
   margin-bottom: calc(var(--padding) / 2);
 }
 
-.construction p {
+.upcoming p {
   opacity: 0.5;
 }
 
@@ -193,10 +198,13 @@ p {
   background-color: var(--color-grey-4);
 }
 
-.social ul {
+ul {
   list-style-type: none; /* Remove bullets */
   padding: 0; /* Remove padding */
   margin: 0; /* Remove margins */
+}
+
+.social ul {
   text-align: end;
 }
 
@@ -211,6 +219,16 @@ a:hover {
   text-underline-offset: 4px;
 }
 
+/* PROGRAMME */
+.event {
+  display: grid;
+  margin-bottom: 1em;
+}
+
+.event h3 {
+  line-height: 1.1;
+}
+
 /* .social li:first-child::after {
   content: "";
   display: block;
@@ -222,8 +240,10 @@ a:hover {
 .color-text {
   color: var(--color-grey-3);
   font-weight: 700;
-  transition: 1.5s;
-  transition-timing-function: cubic-bezier(0, 0.15, 1, 0.37);
+  transition: 0.1s cubic-bezier(0, 0.15, 1, 0.37) 0.2s;
+  /* transition-duration: 0.1s;
+  transition-delay: 0.2s;
+  transition-timing-function: ; */
 }
 
 /* MEDIA */
@@ -238,12 +258,6 @@ a:hover {
   }
   .logo p {
     font-size: 5.5em;
-  }
-}
-
-@media (min-width: 1500px) {
-  body {
-    font-size: 20px;
   }
 }
 
@@ -285,5 +299,14 @@ a:hover {
   }
   .social ul {
     text-align: center;
+  }
+}
+
+@media (min-width: 1500px) {
+  body {
+    font-size: 20px;
+  }
+  .programme {
+    margin-bottom: 7em;
   }
 }

@@ -19,11 +19,16 @@ function randomColor() {
     el.style.color = `var(--color-text-${Math.floor(Math.random() * 10) + 1})`;
     setTimeout(() => {
       el.style.transition = "0s";
-    }, 100);
+      gridItem.forEach((el) => {
+        el.style.transition = "0s";
+      });
+    }, 500);
   });
 }
 
-randomColor();
+setTimeout(() => {
+  randomColor();
+}, 800);
 
 // programme generator from json
 

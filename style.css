@@ -15,7 +15,7 @@
   --color-text-8: #ff0000;
   --color-text-9: #00fdff;
   --color-text-10: #fd8208;
-  --transition: 0.2s cubic-bezier(0, 0.15, 1, 0.37);
+  --transition: 0.2s cubic-bezier(0, 0.15, 1, 0.37) 0.5s;
 }
 
 @font-face {
@@ -240,7 +240,7 @@ a:hover {
 .color-text {
   color: var(--color-grey-3);
   font-weight: 700;
-  transition: 0.1s cubic-bezier(0, 0.15, 1, 0.37) 0.2s;
+  transition: var(--transitions);
   /* transition-duration: 0.1s;
   transition-delay: 0.2s;
   transition-timing-function: ; */

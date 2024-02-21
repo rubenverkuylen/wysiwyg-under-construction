@@ -10,16 +10,24 @@
   {
     "title": "Glued & Screwed #16 w/ First Cut",
     "datestart": "03-20-2024",
-    "location": "Filmhuis The Hague",
     "dateend": null,
+    "location": "Filmhuis The Hague",
     "url": null,
     "urltext": null
   },
   {
-    "title": "Glued & Screwed #17",
-    "datestart": "04-24-2024",
-    "location": "Filmhuis The Hague",
+    "title": "Slow Drift(s): Peggy Ahwesh intervention by wysiwyg",
+    "datestart": "03-29-2024",
     "dateend": null,
+    "location": "The Balcony (The Hague)",
+    "url": "https://thebalconythehague.com/Slow-Drift-s-Peggy-Ahwesh",
+    "urltext": "More info"
+  },
+  {
+    "title": "Glued & Screwed #17 w/ The Balcony",
+    "datestart": "04-24-2024",
+    "dateend": null,
+    "location": "Filmhuis The Hague",
     "url": null,
     "urltext": null
   }

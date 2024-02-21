@@ -239,11 +239,17 @@ a:hover {
 /* COLORTEXT */
 .color-text {
   color: var(--color-grey-3);
+  color: black;
   font-weight: 700;
   transition: var(--transitions);
   /* transition-duration: 0.1s;
   transition-delay: 0.2s;
   transition-timing-function: ; */
+}
+
+#wysiwyg,
+.color-text {
+  order: 50;
 }
 
 /* MEDIA */

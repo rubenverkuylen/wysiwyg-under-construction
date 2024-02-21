@@ -15,20 +15,34 @@ form.setAttribute("href", "mailto:".concat(atob(encEmail)));
 
 // random color
 function randomColor() {
-  [].forEach.call(document.querySelectorAll(".color-text"), function (el) {
-    el.style.color = `var(--color-text-${Math.floor(Math.random() * 10) + 1})`;
+  [].forEach.call(document.querySelectorAll(".color-text"), function (el, i) {
     setTimeout(() => {
-      el.style.transition = "0s";
-      gridItem.forEach((el) => {
-        el.style.transition = "0s";
-      });
-    }, 500);
+      el.style.color = `var(--color-text-${
+        Math.floor(Math.random() * 10) + 1
+      })`;
+      changeOrder(el);
+    }, 10 * i);
+
+    removeTransition(el);
   });
 }
 
+const changeOrder = function (el) {
+  el.style.order = Math.floor(Math.random() * 10) + 1;
+};
+
+const removeTransition = function (el) {
+  setTimeout(() => {
+    el.style.transition = "0s";
+    gridItem.forEach((e) => {
+      e.style.transition = "0s";
+    });
+  }, 500);
+};
+
 setTimeout(() => {
   randomColor();
-}, 800);
+}, 600);
 
 // programme generator from json
 
@@ -48,7 +62,7 @@ getDataProgramme();
 const renderProgramme = function (event) {
   let newDate = new Date(event.datestart).getTime();
   let urlCheck = event.url
-    ? `<strong><a href="${event.url}">${event.urltext}</a></strong>`
+    ? `<strong><a href="${event.url}" target="_blank">${event.urltext}</a></strong>`
     : "";
 
   if (newDate < getCurrentDate()) {

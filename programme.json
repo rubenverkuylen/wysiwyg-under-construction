@@ -1,34 +1,34 @@
 [
   {
-    "title": "Glued & Screwed #15 w/ Home Cinema",
-    "datestart": "02-28-2024",
-    "dateend": null,
-    "location": "Filmhuis The Hague",
-    "url": "https://filmhuisdenhaag.nl/films/glued-screwed-15",
-    "urltext": "tickets"
-  },
-  {
-    "title": "Glued & Screwed #16 w/ First Cut",
-    "datestart": "03-20-2024",
-    "dateend": null,
-    "location": "Filmhuis The Hague",
-    "url": null,
-    "urltext": null
-  },
-  {
-    "title": "Slow Drift(s): Peggy Ahwesh intervention by wysiwyg",
-    "datestart": "03-29-2024",
-    "dateend": null,
-    "location": "The Balcony (The Hague)",
-    "url": "https://thebalconythehague.com/Slow-Drift-s-Peggy-Ahwesh",
-    "urltext": "More info"
-  },
-  {
     "title": "Glued & Screwed #17 w/ The Balcony",
     "datestart": "04-24-2024",
     "dateend": null,
     "location": "Filmhuis The Hague",
-    "url": null,
-    "urltext": null
+    "url": "https://filmhuisdenhaag.nl/glued-and-screwed",
+    "urltext": "more info"
+  },
+  {
+    "title": "Glued & Screwed #18",
+    "datestart": "05-31-2024",
+    "dateend": null,
+    "location": "Filmhuis The Hague",
+    "url": "https://filmhuisdenhaag.nl/glued-and-screwed",
+    "urltext": "more info"
+  },
+  {
+    "title": "Glued & Screwed #19",
+    "datestart": "10-25-2024",
+    "dateend": null,
+    "location": "Filmhuis The Hague",
+    "url": "https://filmhuisdenhaag.nl/glued-and-screwed",
+    "urltext": "more info"
+  },
+  {
+    "title": "Glued & Screwed #20",
+    "datestart": "11-29-2024",
+    "dateend": null,
+    "location": "Filmhuis The Hague",
+    "url": "https://filmhuisdenhaag.nl/glued-and-screwed",
+    "urltext": "more info"
   }
 ]

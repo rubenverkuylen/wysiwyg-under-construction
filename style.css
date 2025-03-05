@@ -142,10 +142,6 @@ header {
   justify-content: space-around;
 }
 
-/* .logo > span {
-  margin-left: 10px;
-} */
-
 #grid-container {
   width: 100%;
   display: grid;
@@ -162,8 +158,9 @@ header {
 }
 
 h1,
-.social li {
-  font-size: 2em;
+.social li,
+.button-more a {
+  font-size: 1.5em;
   font-weight: 700;
 }
 
@@ -184,18 +181,20 @@ p {
   font-size: 1.25em;
 }
 
-.upcoming h1,
-.opencall h1 {
+/* EVENTS */
+
+.events h1 {
   text-align: center;
   margin-bottom: calc(var(--padding) / 2);
 }
 
-.upcoming p {
+.events.past {
   opacity: 0.5;
+  margin-bottom: 8em;
 }
 
-.opencall {
-  background-color: var(--color-grey-4);
+.event-location {
+  font-style: italic;
 }
 
 ul {
@@ -217,6 +216,25 @@ a:hover {
   text-decoration: underline;
   text-decoration-thickness: 4px;
   text-underline-offset: 4px;
+}
+
+/* INTRO */
+.support {
+  mix-blend-mode: multiply;
+  filter: grayscale(1);
+  opacity: 0.7;
+}
+.supporter-container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 2em;
+  margin-top: 1em;
+}
+
+.supporter {
+  height: 75px; /* Adjust size as needed */
+  width: auto;
 }
 
 /* PROGRAMME */
@@ -258,6 +276,18 @@ a:hover {
     grid-template-columns: 1fr 1fr 1fr;
     height: 100vh;
   }
+  .grid-item:nth-child(2) {
+    order: 3;
+  }
+  #item-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #item-middle {
+    height: 100vh;
+    overflow-y: scroll;
+  }
   .logo {
     width: 70%;
     margin: auto;
@@ -271,6 +301,14 @@ a:hover {
   :root {
     --padding: 1em;
   }
+  #item-left {
+    display: grid;
+    gap: 2em;
+  }
+  .events.past {
+    display: none;
+  }
+
   header {
     top: 0;
   }
@@ -312,7 +350,7 @@ a:hover {
   body {
     font-size: 20px;
   }
-  .programme {
+  /* .programme {
     margin-bottom: 7em;
-  }
+  } */
 }

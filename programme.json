@@ -1,34 +1,47 @@
 [
   {
-    "title": "Glued & Screwed #18 w/ Video Art Miden",
-    "datestart": "05-27-2024",
+    "title": "Glued & Screwed #23",
+    "datestart": "04-30-2025",
     "dateend": null,
     "location": "Filmhuis The Hague",
     "url": "https://filmhuisdenhaag.nl/glued-and-screwed",
-    "urltext": "more info"
+    "urltext": "more info soon",
+    "description": "With works by Jonas Lund, Harry Thuman"
   },
   {
-    "title": "Glued & Screwed #19",
-    "datestart": "09-25-2024",
+    "title": "Glued & Screwed #22",
+    "datestart": "03-26-2025",
     "dateend": null,
     "location": "Filmhuis The Hague",
     "url": "https://filmhuisdenhaag.nl/glued-and-screwed",
-    "urltext": "more info"
-  },
-  {
-    "title": "Glued & Screwed #20",
-    "datestart": "10-23-2024",
-    "dateend": null,
-    "location": "Filmhuis The Hague",
-    "url": "https://filmhuisdenhaag.nl/glued-and-screwed",
-    "urltext": "more info"
+    "urltext": "more info soon",
+    "description": "With works by Jonas Lund, Harry Thuman"
   },
   {
     "title": "Glued & Screwed #21",
-    "datestart": "11-27-2024",
+    "datestart": "02-26-2025",
     "dateend": null,
     "location": "Filmhuis The Hague",
     "url": "https://filmhuisdenhaag.nl/glued-and-screwed",
-    "urltext": "more info"
+    "urltext": "more info soon",
+    "description": "With works by Jonas Lund, Harry Thuman"
+  },
+  {
+    "title": "Glued & Screwed #20",
+    "datestart": "01-26-2025",
+    "dateend": null,
+    "location": "Filmhuis The Hague",
+    "url": "https://filmhuisdenhaag.nl/glued-and-screwed",
+    "urltext": "more info soon",
+    "description": "With works by Jonas Lund, Harry Thuman"
+  },
+  {
+    "title": "Glued & Screwed #19",
+    "datestart": "01-10-2025",
+    "dateend": null,
+    "location": "Filmhuis The Hague",
+    "url": "https://filmhuisdenhaag.nl/glued-and-screwed",
+    "urltext": "more info soon",
+    "description": "With works by Jonas Lund, Harry Thuman"
   }
 ]

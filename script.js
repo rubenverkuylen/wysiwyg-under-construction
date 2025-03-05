@@ -1,5 +1,8 @@
 "use strict";
-const events = document.querySelector(".events");
+const upcomingEvents = document
+  .querySelector(".upcoming")
+  .querySelector(".event-list");
+const pastEvents = document.querySelector(".past").querySelector(".event-list");
 const warning = document.getElementById("warning");
 const gridItem = document.querySelectorAll(".grid-item");
 
@@ -59,14 +62,27 @@ const getDataProgramme = function () {
 };
 getDataProgramme();
 
+let counter = 0;
 const renderProgramme = function (event) {
-  let newDate = new Date(event.datestart).getTime();
+  let newDate = new Date(event.datestart.replace(/-/g, "/")).getTime();
   let urlCheck = event.url
     ? `<strong><a href="${event.url}" target="_blank">${event.urltext}</a></strong>`
     : "";
 
   if (newDate < getCurrentDate()) {
-    return;
+    counter++;
+    if (counter > 10) {
+      return;
+    }
+    const html = `
+    <li class="event" data-index="${counter}">
+    <h3>${event.title}</h3>
+    <time>${event.datestart}${event.dateend ? " — " + event.dateend : ""}</time>
+    <div class="event-location">${event.location}</div>
+    <div>${event.description}</div>
+    </li>
+    `;
+    pastEvents.insertAdjacentHTML("beforeend", html);
   } else {
     warning.remove();
 
@@ -74,11 +90,11 @@ const renderProgramme = function (event) {
     <li class="event">
     <h3>${event.title}</h3>
     <time>${event.datestart}${event.dateend ? " — " + event.dateend : ""}</time>
-    <div>${event.location}</div>
+    <div class="event-location">${event.location}</div>
     ${urlCheck}
     </li>
     `;
-    events.insertAdjacentHTML("beforeend", html);
+    upcomingEvents.insertAdjacentHTML("afterend", html);
   }
 };
 

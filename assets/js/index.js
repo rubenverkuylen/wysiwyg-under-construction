@@ -127,7 +127,7 @@ function scrollOpacity() {
     positionY / (scrollDiv.scrollHeight - scrollDiv.clientHeight)
   );
   let invertedY = 1 - relativeY;
-  const sigmoidK = 15;
+  const sigmoidK = 20;
   let sigmoid = 1 / (1 + Math.exp(-1 * sigmoidK * (relativeY - 0.5)));
   header.style.opacity = invertedY;
   gridItem.forEach((el) => {

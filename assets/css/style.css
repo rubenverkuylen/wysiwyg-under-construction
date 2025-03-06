@@ -1,4 +1,6 @@
 /* reset/normalizer by https://piccalil.li/blog/a-modern-css-reset/ */
+@import "/assets/css/fonts.css";
+
 :root {
   --padding: 2em;
   --color-grey-1: #eaeaea;
@@ -16,32 +18,6 @@
   --color-text-9: #00fdff;
   --color-text-10: #fd8208;
   --transition: 0.2s cubic-bezier(0, 0.15, 1, 0.37) 0.5s;
-}
-
-@font-face {
-  font-family: SFProRounded;
-  font-weight: 300;
-  src: url("assets/fonts/SF-Pro-Rounded-Regular.otf") format("opentype");
-}
-@font-face {
-  font-family: SFProRounded;
-  font-weight: 400;
-  src: url("assets/fonts/SF-Pro-Rounded-Medium.otf") format("opentype");
-}
-@font-face {
-  font-family: SFProRounded;
-  font-weight: 500;
-  src: url("assets/fonts/SF-Pro-Rounded-Bold.otf") format("opentype");
-}
-@font-face {
-  font-family: SFProRounded;
-  font-weight: 600;
-  src: url("assets/fonts/SF-Pro-Rounded-Semibold.otf") format("opentype");
-}
-@font-face {
-  font-family: SFProRounded;
-  font-weight: 700;
-  src: url("assets/fonts/SF-Pro-Rounded-Heavy.otf") format("opentype");
 }
 
 /* Box sizing rules */

@@ -1,10 +1,15 @@
 "use strict";
+import { debounce, throttle } from "./modules/timing.js";
+
+// variables
 const upcomingEvents = document
   .querySelector(".upcoming")
   .querySelector(".event-list");
 const pastEvents = document.querySelector(".past").querySelector(".event-list");
 const warning = document.getElementById("warning");
 const gridItem = document.querySelectorAll(".grid-item");
+const scrollDiv = document.querySelector("#item-programme");
+const header = document.querySelector("header");
 
 // Round border
 gridItem.forEach((el) => {
@@ -71,7 +76,7 @@ const renderProgramme = function (event) {
 
   if (newDate < getCurrentDate()) {
     counter++;
-    if (counter > 10) {
+    if (counter > 20) {
       return;
     }
     const html = `
@@ -79,7 +84,7 @@ const renderProgramme = function (event) {
     <h3>${event.title}</h3>
     <time>${event.datestart}${event.dateend ? " — " + event.dateend : ""}</time>
     <div class="event-location">${event.location}</div>
-    <div>${event.description}</div>
+    <div class="event-description">${event.description}</div>
     </li>
     `;
     pastEvents.insertAdjacentHTML("beforeend", html);
@@ -111,4 +116,21 @@ const getCurrentDate = function () {
 };
 getCurrentDate();
 
-// change transition
+// Header scroll
+scrollDiv.addEventListener("scroll", throttle(scrollOpacity, 100), {
+  passive: true,
+});
+
+function scrollOpacity() {
+  let positionY = scrollDiv.scrollTop;
+  let relativeY = Math.abs(
+    positionY / (scrollDiv.scrollHeight - scrollDiv.clientHeight)
+  );
+  let invertedY = 1 - relativeY;
+  const sigmoidK = 15;
+  let sigmoid = 1 / (1 + Math.exp(-1 * sigmoidK * (relativeY - 0.5)));
+  header.style.opacity = invertedY;
+  gridItem.forEach((el) => {
+    el.style.filter = `invert(${sigmoid}`;
+  });
+}

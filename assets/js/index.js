@@ -8,9 +8,12 @@ const upcomingEvents = document
   .querySelector(".event-list");
 const pastEvents = document.querySelector(".past").querySelector(".event-list");
 const warning = document.getElementById("warning");
+const gridContainer = document.getElementById("grid-container");
 const gridItem = document.querySelectorAll(".grid-item");
 const scrollDiv = document.querySelector("#item-programme");
 const header = document.querySelector("header");
+const gallery = document.querySelector(".gallery");
+const images = document.querySelectorAll(".gallery__item");
 
 // Lightbox
 //
@@ -94,7 +97,6 @@ setTimeout(() => {
 }, 600);
 
 // programme generator from json
-
 const getDataProgramme = function () {
   fetch("./programme.json")
     .then((response) => {
@@ -169,13 +171,49 @@ function scrollOpacity() {
   );
   let relativeYRound = Math.round(relativeY * 1000) / 1000;
   let invertedY = 1 - relativeYRound;
-  const sigmoidK = 20;
+  const sigmoidK = 15;
   let sigmoid = 1 / (1 + Math.exp(-1 * sigmoidK * (relativeYRound - 0.5)));
   header.style.opacity = invertedY;
-  header.style.transform = `scale(${10 * relativeYRound + 1}) translateY(${
-    sigmoid * 200
+  header.style.transform = `scale(${15 * relativeYRound + 1}) translateY(${
+    sigmoid * 100
   }%)`;
-  gridItem.forEach((el) => {
-    el.style.filter = `invert(${sigmoid}`;
+  gridContainer.style.filter = `invert(${sigmoid}`;
+  images.forEach((el) => {
+    el.querySelector("img").style.filter = `invert(${sigmoid}`;
   });
+}
+
+function playClickSound(freq) {
+  const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+  const oscillator = audioContext.createOscillator();
+  const gainNode = audioContext.createGain();
+
+  oscillator.type = "sine"; // Still clicky, but we reduce the harshness
+  oscillator.frequency.setValueAtTime(freq, audioContext.currentTime); // Lower frequency for a softer tone
+  gainNode.gain.setValueAtTime(0.01, audioContext.currentTime); // Reduce initial volume
+  gainNode.gain.exponentialRampToValueAtTime(
+    0.001,
+    audioContext.currentTime + 0.05
+  ); // Smooth fade out
+
+  oscillator.connect(gainNode);
+  gainNode.connect(audioContext.destination);
+
+  oscillator.start();
+  oscillator.stop(audioContext.currentTime + 0.05); // Short duration for a click
+}
+
+gallery.addEventListener("click", (el) => {
+  const item = el.target;
+  const parent = item.parentElement.parentElement;
+  const index = getNodeIndex(parent) + 1;
+  if (item.tagName != "IMG") {
+    return;
+  } else {
+    playClickSound(50 * index + 300);
+  }
+});
+
+function getNodeIndex(node) {
+  return Array.prototype.indexOf.call(node.parentNode.children, node);
 }

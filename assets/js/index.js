@@ -1,5 +1,6 @@
 "use strict";
 import { debounce, throttle } from "./modules/timing.js";
+import PhotoSwipeLightbox from "./photoswipe-lightbox.esm.js";
 
 // variables
 const upcomingEvents = document
@@ -10,6 +11,46 @@ const warning = document.getElementById("warning");
 const gridItem = document.querySelectorAll(".grid-item");
 const scrollDiv = document.querySelector("#item-programme");
 const header = document.querySelector("header");
+
+// Lightbox
+//
+const options = {
+  gallery: "#gallery",
+  children: ".gallery__item",
+  pswpModule: () => import("./photoswipe.esm.js"),
+};
+const lightbox = new PhotoSwipeLightbox(options);
+lightbox.on("uiRegister", function () {
+  lightbox.pswp.ui.registerElement({
+    name: "custom-caption",
+    order: 9,
+    isButton: false,
+    appendTo: "root",
+    html: "Caption text",
+    onInit: (el, pswp) => {
+      lightbox.pswp.on("change", () => {
+        const currSlideElement = lightbox.pswp.currSlide.data.element;
+        let captionHTML = "";
+        if (currSlideElement) {
+          const hiddenCaption = currSlideElement.querySelector(
+            ".hidden-caption-content"
+          );
+          if (hiddenCaption) {
+            // get caption from element with class hidden-caption-content
+            captionHTML = hiddenCaption.innerHTML;
+          } else {
+            // get caption from alt attribute
+            captionHTML = currSlideElement
+              .querySelector("img")
+              .getAttribute("alt");
+          }
+        }
+        el.innerHTML = captionHTML || "";
+      });
+    },
+  });
+});
+lightbox.init();
 
 // Round border
 gridItem.forEach((el) => {
@@ -117,7 +158,7 @@ const getCurrentDate = function () {
 getCurrentDate();
 
 // Header scroll
-scrollDiv.addEventListener("scroll", throttle(scrollOpacity, 100), {
+scrollDiv.addEventListener("scroll", throttle(scrollOpacity, 50), {
   passive: true,
 });
 
@@ -126,10 +167,14 @@ function scrollOpacity() {
   let relativeY = Math.abs(
     positionY / (scrollDiv.scrollHeight - scrollDiv.clientHeight)
   );
-  let invertedY = 1 - relativeY;
+  let relativeYRound = Math.round(relativeY * 1000) / 1000;
+  let invertedY = 1 - relativeYRound;
   const sigmoidK = 20;
-  let sigmoid = 1 / (1 + Math.exp(-1 * sigmoidK * (relativeY - 0.5)));
+  let sigmoid = 1 / (1 + Math.exp(-1 * sigmoidK * (relativeYRound - 0.5)));
   header.style.opacity = invertedY;
+  header.style.transform = `scale(${10 * relativeYRound + 1}) translateY(${
+    sigmoid * 200
+  }%)`;
   gridItem.forEach((el) => {
     el.style.filter = `invert(${sigmoid}`;
   });

@@ -265,6 +265,9 @@ a:hover {
 
 .gallery img {
   border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   &:hover {
     filter: grayscale(1) contrast(2);
   }
@@ -285,7 +288,7 @@ a:hover {
   text-align: center;
 }
 .pswp__custom-caption a {
-  color: #fff;
+  color: var(--color-text-1);
   text-decoration: underline;
 }
 .hidden-caption-content {

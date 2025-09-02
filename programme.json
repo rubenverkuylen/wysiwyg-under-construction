@@ -1,9 +1,54 @@
 [
   {
-    "title": "Glued & Screwed 23",
-    "datestart": "05-27-2025",
+    "title": "Twist, Topple, Turn, Twiddle 01",
+    "datestart": "11-12-2025",
     "dateend": null,
-    "location": "Filmhuis The Hague",
+    "location": "Flora Filmtheater",
+    "url": "https://wysiwygcinema.us18.list-manage.com/subscribe?u=c231d4d9723a343df7843236e&id=b7480971e0",
+    "urltext": "more info soon",
+    "description": null
+  },
+  {
+    "title": "Glued & Screwed 26",
+    "datestart": "11-26-2025",
+    "dateend": null,
+    "location": "Filmhuis Den Haag",
+    "url": "https://wysiwygcinema.us18.list-manage.com/subscribe?u=c231d4d9723a343df7843236e&id=b7480971e0",
+    "urltext": "more info soon",
+    "description": null
+  },
+  {
+    "title": "Glued & Screwed 25",
+    "datestart": "10-29-2025",
+    "dateend": null,
+    "location": "Filmhuis Den Haag",
+    "url": "https://wysiwygcinema.us18.list-manage.com/subscribe?u=c231d4d9723a343df7843236e&id=b7480971e0",
+    "urltext": "more info soon",
+    "description": null
+  },
+  {
+    "title": "Sound As A Protagonist 01 w/ Sonic Acts",
+    "datestart": "10-15-2025",
+    "dateend": null,
+    "location": "Filmhuis Den Haag",
+    "url": "https://wysiwygcinema.us18.list-manage.com/subscribe?u=c231d4d9723a343df7843236e&id=b7480971e0",
+    "urltext": "more info soon",
+    "description": null
+  },
+  {
+    "title": "Glued & Screwed 24",
+    "datestart": "09-24-2025",
+    "dateend": null,
+    "location": "Filmhuis Den Haag",
+    "url": "https://wysiwygcinema.us18.list-manage.com/subscribe?u=c231d4d9723a343df7843236e&id=b7480971e0",
+    "urltext": "more info soon",
+    "description": null
+  },
+  {
+    "title": "Glued & Screwed 23",
+    "datestart": "05-28-2025",
+    "dateend": null,
+    "location": "Filmhuis Den Haag",
     "url": "https://filmhuisdenhaag.nl/glued-and-screwed",
     "urltext": "more info soon",
     "description": null
@@ -12,7 +57,7 @@
     "title": "Glued & Screwed 22",
     "datestart": "04-29-2025",
     "dateend": null,
-    "location": "Filmhuis The Hague",
+    "location": "Filmhuis Den Haag",
     "url": "https://filmhuisdenhaag.nl/glued-and-screwed",
     "urltext": "more info soon",
     "description": null
@@ -30,7 +75,7 @@
     "title": "Glued & Screwed 21 w/ Indeks",
     "datestart": "11-27-2024",
     "dateend": null,
-    "location": "Filmhuis The Hague",
+    "location": "Filmhuis Den Haag",
     "url": null,
     "urltext": null,
     "description": "Artists: Kyulim Kim, Le Bac Tan, Chanasorn Chaikitiporn, Yuen Ming Lo & Chun-Yao Lin, Natasha Tontey, Hu Ching Chuan"
@@ -48,7 +93,7 @@
     "title": "Glued & Screwed 20 w/ Touchy Studios",
     "datestart": "10-23-2024",
     "dateend": null,
-    "location": "Filmhuis The Hague",
+    "location": "Filmhuis Den Haag",
     "url": null,
     "urltext": null,
     "description": "Artists: Verena Blok, Mateo Vega, Amanda van Hesteren, Jonathan Hielkema"
@@ -66,7 +111,7 @@
     "title": "Glued & Screwed 19 w/ 1646",
     "datestart": "09-25-2024",
     "dateend": null,
-    "location": "Filmhuis The Hague",
+    "location": "Filmhuis Den Haag",
     "url": null,
     "urltext": null,
     "description": "Artists: Johann Lurf, Juan Arturo García, Johann Lurf, Sam Keogh, Marco Douma & Roel Meelkop"
@@ -93,7 +138,7 @@
     "title": "Glued & Screwed 18 w/ Video Art Miden (Greece)",
     "datestart": "05-29-2024",
     "dateend": null,
-    "location": "Filmhuis The Hague",
+    "location": "Filmhuis Den Haag",
     "url": null,
     "urltext": null,
     "description": "Artists: Kleoniki Stanich, Smaragda Nitsopoulou, Makis Kyriakopoulos, Alcaeus Spyrou"
@@ -102,7 +147,7 @@
     "title": "Glued & Screwed 17 w/ The Balcony",
     "datestart": "04-24-2024",
     "dateend": null,
-    "location": "Filmhuis The Hague",
+    "location": "Filmhuis Den Haag",
     "url": null,
     "urltext": null,
     "description": "Artists: Sophie Czich, Syd Farrington, Stéphanie Lagarde, Bureau of Inverse Technology, Giovanni Giaretta"
@@ -120,7 +165,7 @@
     "title": "Glued & Screwed 16 w/ First Cut",
     "datestart": "03-20-2024",
     "dateend": null,
-    "location": "Filmhuis The Hague",
+    "location": "Filmhuis Den Haag",
     "url": null,
     "urltext": null,
     "description": "Artists: Sarah Vanagt, Carmen Dusmet Carrasco, Ewan Macbeth"
@@ -129,7 +174,7 @@
     "title": "Glued & Screwed 15 w/ Home Cinema",
     "datestart": "02-28-2024",
     "dateend": null,
-    "location": "Filmhuis The Hague",
+    "location": "Filmhuis Den Haag",
     "url": null,
     "urltext": null,
     "description": "With works by Feline Hjermind, Barry Dupé, Cassie Augusta Jørgensen and Caz Egelie and Jesse Strikwerda."
@@ -138,7 +183,7 @@
     "title": "Glued & Screwed 14 w/ Chute Film Coop",
     "datestart": "01-31-2024",
     "dateend": null,
-    "location": "Filmhuis The Hague",
+    "location": "Filmhuis Den Haag",
     "url": null,
     "urltext": null,
     "description": "Artists: Emily Rose Apter and Elijah Stevens, Barbara Hammer, Caroline Kopko, Lauren Cook, Peggy Ahwesh "
@@ -147,7 +192,7 @@
     "title": "Glued & Screwed 13 w/ Ruang MES 56",
     "datestart": "11-29-2023",
     "dateend": null,
-    "location": "Filmhuis The Hague",
+    "location": "Filmhuis Den Haag",
     "url": null,
     "urltext": null,
     "description": "Artists: Wimo Ambala Bayang, Dito Yuwono, Arief Budiman, Edwin Roseno, Eris Setiyawan and Edwin Roseno"
@@ -156,7 +201,7 @@
     "title": "Glued & Screwed 12 w/ wasteland.collective",
     "datestart": "10-25-2023",
     "dateend": null,
-    "location": "Filmhuis The Hague",
+    "location": "Filmhuis Den Haag",
     "url": null,
     "urltext": null,
     "description": "Artists: Francois Knoetze, Miloš Tomić, Ernst Karel, Toby Lee and Paweł Wojtasik"

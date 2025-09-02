@@ -112,20 +112,28 @@ getDataProgramme();
 
 let counter = 0;
 const renderProgramme = function (event) {
-  let newDate = new Date(event.datestart.replace(/-/g, "/")).getTime();
+  const addDay = 24 * 60 * 60 * 1000;
+  let newDate = new Date(event.datestart.replace(/-/g, "/")).getTime() + addDay;
   let urlCheck = event.url
     ? `<strong><a href="${event.url}" target="_blank">${event.urltext}</a></strong>`
     : "";
 
+  const dateStartFormatted = new Date(event.datestart).toLocaleDateString(
+    "en-GB"
+  );
+  const dateEndFormatted = new Date(event.dateend).toLocaleDateString("en-GB");
   if (newDate < getCurrentDate()) {
     counter++;
     if (counter > 20) {
       return;
     }
+
     const html = `
     <li class="event" data-index="${counter}">
     <h3>${event.title}</h3>
-    <time>${event.datestart}${event.dateend ? " — " + event.dateend : ""}</time>
+    <time>${dateStartFormatted}${
+      !dateEndFormatted ? " — " + dateEndFormatted : ""
+    }</time>
     <div class="event-location">${event.location}</div>
     <div class="event-description">${event.description}</div>
     </li>
@@ -137,7 +145,9 @@ const renderProgramme = function (event) {
     const html = `
     <li class="event">
     <h3>${event.title}</h3>
-    <time>${event.datestart}${event.dateend ? " — " + event.dateend : ""}</time>
+    <time>${dateStartFormatted}${
+      !dateEndFormatted ? " — " + dateEndFormatted : ""
+    }</time>
     <div class="event-location">${event.location}</div>
     ${urlCheck}
     </li>
@@ -148,16 +158,8 @@ const renderProgramme = function (event) {
 
 const getCurrentDate = function () {
   const date = new Date();
-
-  let day = date.getDate();
-  let month = date.getMonth() + 1;
-  let year = date.getFullYear();
-
-  // This arrangement can be altered based on how we want the date's format to appear.
-  let currentDate = `${year}-${month}-${day}`;
   return date;
 };
-getCurrentDate();
 
 // Header scroll
 scrollDiv.addEventListener("scroll", throttle(scrollOpacity, 50), {

@@ -115,7 +115,7 @@ const renderProgramme = function (event) {
   const addDay = 24 * 60 * 60 * 1000;
   let newDate = new Date(event.datestart.replace(/-/g, "/")).getTime() + addDay;
   let urlCheck = event.url
-    ? `<strong><a href="${event.url}" target="_blank">${event.urltext}</a></strong>`
+    ? `<a href="${event.url}" target="_blank"><strong>${event.urltext}</strong></a>`
     : "";
 
   const dateStartFormatted = new Date(event.datestart).toLocaleDateString(
@@ -152,7 +152,7 @@ const renderProgramme = function (event) {
     ${urlCheck}
     </li>
     `;
-    upcomingEvents.insertAdjacentHTML("afterend", html);
+    upcomingEvents.insertAdjacentHTML("afterbegin", html);
   }
 };
 

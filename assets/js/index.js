@@ -124,7 +124,7 @@ const renderProgramme = function (event) {
   const dateEndFormatted = new Date(event.dateend).toLocaleDateString("en-GB");
   if (newDate < getCurrentDate()) {
     counter++;
-    if (counter > 20) {
+    if (counter > 30) {
       return;
     }
 
@@ -135,7 +135,9 @@ const renderProgramme = function (event) {
       !dateEndFormatted ? " — " + dateEndFormatted : ""
     }</time>
     <div class="event-location">${event.location}</div>
-    <div class="event-description">${event.description}</div>
+    <div class="event-description">${
+      event.description ? event.description : ""
+    }</div>
     </li>
     `;
     pastEvents.insertAdjacentHTML("beforeend", html);
